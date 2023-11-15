@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<body>
+ <form >
+    <input type="text" id ='input',name ='input'>
+    <button onclick = 'serachBook(input)'>Search</button>
+</form>
+ <script>
+    async function searchBook(name) {
+  let nameArr = name.split(" ");
+  let resultingName = nameArr.join("+");
+  console.log("going to specified url");
+  await fetch(`https://openlibrary.org/search.json?q=${resultingName}`).then(
+    (response) => alert(response)
+  );
+}
+ </script>
+</body>
